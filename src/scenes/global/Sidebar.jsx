@@ -21,7 +21,7 @@ import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 const Sidebar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [isCollapse, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const [selected, setSelected] = useState("Dashboard");
 
   return (
@@ -31,7 +31,7 @@ const Sidebar = () => {
           background: `${colors.primary[400]} !important`,
         },
         "& .pro-sidebar-wrapper": {
-          backgroundColor: `${colors.primary[400]} !important`,
+          backgroundColor: `${colors.primary[500]} !important`,
         },
         "& .pro-sidebar-item": {
           padding: "5px 35px 5px 20px !important",
@@ -43,7 +43,53 @@ const Sidebar = () => {
           color: "#6870fa !important",
         },
       }}
-    ></Box>
+    >
+      <ProSidebar collapsed={isCollapsed}>
+        <Menu iconShape="square">
+          <MenuItem
+            onClick={() => setIsCollapsed(!isCollapsed)}
+            icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
+            style={{
+              margin: "10px 0 20px 0",
+              color: colors.grey[100],
+            }}
+          >
+            {!isCollapsed && (
+              <Box
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+                ml="15px"
+              >
+                <Typography variant="h3" color={colors.grey[100]}>
+                  ADMIN
+                </Typography>
+                <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
+                  <MenuOutlinedIcon />
+                </IconButton>
+              </Box>
+            )}
+          </MenuItem>
+          {!isCollapsed && (
+            <Box>
+              <Box display="flex" justifyContent="center" alignContent="center">
+                <img
+                  src="https://i.ibb.co/YP4vpFq/Pngtree-pink-blue-neon-border-light-9157194.png"
+                  width={100}
+                  height={100}
+                  alt="profile-user"
+                />
+              </Box>
+
+              <Box>
+                <Typography>Burak</Typography>
+                <Typography>Admin</Typography>
+              </Box>
+            </Box>
+          )}
+        </Menu>
+      </ProSidebar>
+    </Box>
   );
 };
 
