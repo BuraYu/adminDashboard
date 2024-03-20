@@ -1,6 +1,17 @@
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import Topbar from './global/Topbar'
+import Topbar from "./scenes/global/Topbar";
+import Sidebar from "./scenes/global/Sidebar";
+import Dashboard from "./scenes/dashboard";
+import Team from "./scenes/team";
+import Invoice from "./scenes/dashboard";
+import Contacts from "./scenes/contacts";
+import Bar from "./scenes/bar";
+import Form from "./scenes/form";
+import Line from "./scenes/line";
+import Pie from "./scenes/dashboard";
+import FAQ from "./scenes/faq";
+import Geography from "./scenes/geography";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -12,6 +23,19 @@ function App() {
         <div className="app">
           <main className="content">
             <Topbar />
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/team" element={<Team />} />
+              <Route path="/invoice" element={<Invoice />} />
+              <Route path="/contacts" element={<Contacts />} />
+              <Route path="/bar" element={<Bar />} />
+              <Route path="/form" element={<Form />} />
+              <Route path="/line" element={<Line />} />
+              <Route path="/pie" element={<Pie />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/geography" element={<Geography />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+            </Routes>
           </main>
         </div>
         ;
