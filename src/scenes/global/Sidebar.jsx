@@ -106,7 +106,7 @@ const Sidebar = () => {
                 >
                   Burak
                 </Typography>
-                <Typography variant="h5" color="colors.greenAccent[500">
+                <Typography variant="h5" color={colors.greenAccent[500]}>
                   Admin
                 </Typography>
               </Box>
