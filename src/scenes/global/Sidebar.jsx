@@ -98,7 +98,14 @@ const Sidebar = () => {
               </Box>
 
               <Box textAlign="center">
-                <Typography>Burak</Typography>
+                <Typography
+                  variant="h2"
+                  color={colors.grey[100]}
+                  fontWeight="bold"
+                  sx={{ m: "10px 0 0 0" }}
+                >
+                  Burak
+                </Typography>
                 <Typography variant="h5" color="colors.greenAccent[500">
                   Admin
                 </Typography>
