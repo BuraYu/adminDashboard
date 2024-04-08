@@ -7,7 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import Team from "./scenes/team";
 // import Invoice from "./scenes/dashboard";
 // import Contacts from "./scenes/contacts";
-// import Bar from "./scenes/bar";
+import Bar from "./components/BarChart"
 import Form from "./scenes/form";
 // import Line from "./scenes/line";
 // import Pie from "./scenes/dashboard";
@@ -30,8 +30,8 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/team" element={<Team />} />
               {/* <Route path="/invoice" element={<Invoice />} />
-              <Route path="/contacts" element={<Contacts />} />
-              <Route path="/bar" element={<Bar />} /> */}
+              <Route path="/contacts" element={<Contacts />} /> */}
+              <Route path="/bar" element={<Bar />} />
               <Route path="/form" element={<Form />} />
               {/* <Route path="/line" element={<Line />} />
               <Route path="/pie" element={<Pie />} /> */}
